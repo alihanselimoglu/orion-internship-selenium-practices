@@ -1,33 +1,46 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
 
-public class TrendyolTests {
+public class HomeWorkParallelTests {
 
-    private WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
+    WebDriver driver;
+    @Parameters({"browser"})
+    @BeforeClass
+    public void setUp(String browser) {
+        switch (browser) {
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                break;
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+            case "edge":
+            default:
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+        }
         driver.manage().window().maximize();
         driver.get("https://trendyol.com");
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         driver.quit();
     }
@@ -132,4 +145,5 @@ public class TrendyolTests {
         WebElement cartItemCount = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"account-navigation-container\"]/div/div[2]/div")));
         Assert.assertTrue(cartItemCount.isDisplayed());
     }
+
 }

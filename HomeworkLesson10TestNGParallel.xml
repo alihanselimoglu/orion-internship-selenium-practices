@@ -1,0 +1,20 @@
+<suite name="HomeworkLesson10ParallelSuite" parallel="tests" thread-count="3">
+    <test name="EdgeTest">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="org.example.HomeWorkParallelTests"/>
+        </classes>
+    </test>
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.example.HomeWorkParallelTests"/>
+        </classes>
+    </test>
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="org.example.HomeWorkParallelTests"/>
+        </classes>
+    </test>
+</suite>
