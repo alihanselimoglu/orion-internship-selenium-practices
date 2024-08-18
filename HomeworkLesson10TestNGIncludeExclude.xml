@@ -1,0 +1,12 @@
+<suite name="HomeworkLesson10IncludeExcludeSuite">
+    <test name="IncludeExcludeTest">
+        <classes>
+            <class name="org.example.HomeWorkParallelTests">
+                <methods>
+                    <exclude name="testNumberOfElbiseResults"/>
+                    <exclude name="testAddElbiseItemToCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
