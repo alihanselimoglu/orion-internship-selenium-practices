@@ -31,7 +31,7 @@ public class SearchTests {
         homePage.cookieAccept.click();
         homePage.searchBox.sendKeys("Elbise");
         homePage.searchIcon.click();
-        Assert.assertTrue(homePage.elbiseResultTitle.isDisplayed());
+        Assert.assertTrue(homePage.searchResultTitle.isDisplayed());
     }
 
     @Test
@@ -56,6 +56,7 @@ public class SearchTests {
         Driver.getDriver().switchTo().window(tabs.get(1));
         Thread.sleep(2000);
 
+        homePage.anladimButton.click();
         homePage.elbiseBeden.click();
         homePage.addToCartButton.click();
 

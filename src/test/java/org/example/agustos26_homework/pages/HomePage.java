@@ -1,4 +1,4 @@
-package org.example.TrendyolHomework.pages;
+package org.example.agustos26_homework.pages;
 
 import org.example.TrendyolHomework.utilities.Driver;
 import org.openqa.selenium.WebDriver;
@@ -31,9 +31,6 @@ public class HomePage {
 
     @FindBy(css = ".p-card-wrppr")
     public WebElement firstProduct;
-
-    @FindBy(xpath = "//*[@id=\"product-detail-app\"]/div/div[2]/div/div[2]/div[2]/div/div[1]/aside/div/div[1]/div[3]/div/button")
-    public WebElement anladimButton;
 
     @FindBy(xpath = "//div[@class='sp-itm']")
     public WebElement elbiseBeden;

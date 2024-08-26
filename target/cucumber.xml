@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.237" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Trendyol Login Feature" name="Verify successful login with valid credentials" time="0.031">
+<system-out><![CDATA[
+Given User is on the Trendyol homepage......................................passed
+When User accepts the cookies...............................................passed
+And User clicks on the login button on the header...........................passed
+And User enters valid username..............................................passed
+And User enters valid password..............................................passed
+And User clicks on the login button.........................................passed
+Then User should see the "Hesabım" text after login.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Trendyol Login Feature" name="Verify error message is shown after trying with invalid username" time="0.005">
+<system-out><![CDATA[
+Given User is on the Trendyol homepage......................................passed
+When User accepts the cookies...............................................passed
+And User clicks on the login button on the header...........................passed
+And User enters invalid username............................................passed
+And User enters valid password..............................................passed
+And User clicks on the login button.........................................passed
+Then User should see an error message.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
